@@ -11,7 +11,9 @@ return {
     ["<leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
     ["<leader>bD"] = {
       function()
-        require("astronvim.utils.status").heirline.buffer_picker(function(bufnr) require("astronvim.utils.buffer").close(bufnr) end)
+        require("astronvim.utils.status").heirline.buffer_picker(
+          function(bufnr) require("astronvim.utils.buffer").close(bufnr) end
+        )
       end,
       desc = "Pick to close",
     },
@@ -24,6 +26,10 @@ return {
     -- go to middle of page after half scroll
     ["<C-u>"] = { "<C-u>zz" },
     ["<C-d>"] = { "<C-d>zz" },
+
+    ["<C-f>"] = { "<cmd>silent !tmux neww tmux-sessionizer<CR>", desc = "Create new tmux session" },
+
+    ["<leader>x"] = { "<cmd>!chmod +x %<cr>", desc = "Make current file executable" },
   },
   t = {
     -- setting a mapping to false will disable it
